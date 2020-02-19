@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Web安全漏洞攻击平台</title>
+<style type="text/css">
+	#frame_style{
+		border: none;
+	}
+</style>
+<script type="text/javascript" src="/js/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<iframe src="http://www.vuln.com:8080/clickjacking" id="frame_style" name="hack" >
+	
+	</iframe>
+	
+	<script type="text/javascript">
+		
+		
+		$(function(){
+			var iframe = $("body").children("iframe")[0];
+			alert($(iframe).children("input").val);
+		})
+	</script>
+	
+</body>
+</html>
