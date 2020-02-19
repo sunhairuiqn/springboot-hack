@@ -15,12 +15,20 @@
 	
 	</iframe>
 	
+	
 	<script type="text/javascript">
 		
 		
 		$(function(){
-			var iframe = $("body").children("iframe")[0];
-			alert($(iframe).children("input").val);
+			var iframe = window.frames["frame_style"];
+			var input1 = $(iframe).find("input:first");
+			console.log(input1);
+			var input2 = $(iframe).find("input:last");
+			
+			input2.submit(function(){
+				console.log(input2.val());
+			});
+			
 		})
 	</script>
 	
